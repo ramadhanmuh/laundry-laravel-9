@@ -17,9 +17,15 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
+            $table->string('copyright');
             $table->string('smallImage');
             $table->string('mediumImage');
             $table->string('largeImage');
+            $table->string('favicon');
+            $table->string('twiiter')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('tiktok')->nullable();
             $table->unsignedBigInteger('createdAt');
             $table->unsignedBigInteger('updatedAt');
         });
