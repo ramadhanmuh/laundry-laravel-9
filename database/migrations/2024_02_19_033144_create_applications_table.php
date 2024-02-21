@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
             $table->string('tiktok')->nullable();
+            $table->string('youtube')->nullable();
             $table->unsignedBigInteger('createdAt');
             $table->unsignedBigInteger('updatedAt');
         });

@@ -13,16 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('one_page_menus', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->uuid('menuId');
             $table->string('name', 100);
-            $table->string('slug')->unique()->nullable();
+            $table->string('slug');
             $table->unsignedTinyInteger('number');
-            $table->string('filePath');
-            $table->string('metaTitle');
-            $table->string('metaDescription');
             $table->unsignedBigInteger('createdAt');
             $table->unsignedBigInteger('updatedAt');
+
+            $table->foreign('menuId')->references('id')
+                                        ->on('menus')
+                                        ->cascadeOnDelete()
+                                        ->cascadeOnUpdate();
         });
     }
 
@@ -33,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('one_page_menus');
     }
 };

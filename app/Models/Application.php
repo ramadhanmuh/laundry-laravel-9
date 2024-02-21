@@ -17,7 +17,12 @@ class Application extends Model
         'smallImage',
         'mediumImage',
         'largeImage',
-        'favicon'
+        'favicon',
+        'twitter',
+        'facebook',
+        'instagram',
+        'tiktok',
+        'youtube',
     ];
 
     const CREATED_AT = 'createdAt';

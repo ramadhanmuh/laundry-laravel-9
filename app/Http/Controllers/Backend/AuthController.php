@@ -13,6 +13,6 @@ class AuthController extends Controller
      */
     public function show()
     {
-        return view('backend.auth.login');
+        return view('backend.pages.auth.login');
     }
 }
